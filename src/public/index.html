@@ -4,45 +4,11 @@
 	<meta charset="utf-8">
 	<title>Angular 2 App | ng2-webpack</title>
 	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-
-	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.js"></script>
-	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.css" />
 
 	<base href="./">
 </head>
 <body>
 	<my-app>Loading...</my-app>
-	<div id="firebaseui-auth-container"></div>
-
-	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-	<script>
-		// Initialize Firebase
-		const config = {
-			apiKey: "AIzaSyCWr48j9gGEhz1hvjwKIfYftcgGb4Q30L0",
-			authDomain: "project-2731511947915132034.firebaseapp.com",
-			databaseURL: "https://project-2731511947915132034.firebaseio.com",
-			storageBucket: "project-2731511947915132034.appspot.com",
-		};
-
-		// FirebaseUI config.
-		const uiConfig = {
-			'signInSuccessUrl': '<url-to-redirect-to-on-success>',
-			'signInOptions': [
-				firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-			],
-			// Terms of service url.
-			'tosUrl': '<your-tos-url>',
-		};
-
-		// Initialize the FirebaseUI Widget using Firebase.
-		const app = firebase.initializeApp(config);
-		const auth = app.auth();
-		const ui = new firebaseui.auth.AuthUI(auth);
-		// The start method will wait until the DOM is loaded.
-		ui.start('#firebaseui-auth-container', uiConfig);
-	</script>
-
 </body>
 </html>

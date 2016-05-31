@@ -1,6 +1,7 @@
 <main>
-  <h1 class="title">Hello from {{api.title}}!</h1>
+	<h1 class="title">Hello from {{api.title}}!</h1>
+	<a [routerLink]="['/']">Home</a>
+	<a [routerLink]="['/login']">Login</a>
 
-  <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/angular.png">
+	<router-outlet></router-outlet>
 </main>

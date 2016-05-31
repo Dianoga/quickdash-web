@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { ApiService } from './shared';
+import { ApiService, AuthService, FirebaseService } from './shared';
+import { LoginComponent } from './login';
+import { DashboardComponent } from './dashboard';
 
 import '../style/app.scss';
 
@@ -10,14 +13,16 @@ import '../style/app.scss';
  */
 @Component({
 	selector: 'my-app', // <my-app></my-app>
-	providers: [ApiService],
+	providers: [ApiService, AuthService, FirebaseService],
 	template: require('./app.component.html'),
 	styles: [require('./app.component.scss')],
+	directives: [...ROUTER_DIRECTIVES]
 })
-
+@Routes([
+	{ path: '/', component: DashboardComponent },
+	{ path: '/login', component: LoginComponent }
+])
 export class AppComponent {
-	url = 'https://github.com/preboot/angular2-webpack';
-
-	constructor(private api: ApiService) {
+	constructor(private api: ApiService, private auth: AuthService) {
 	}
 }

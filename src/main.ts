@@ -1,6 +1,7 @@
 import { enableProdMode } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { ELEMENT_PROBE_PROVIDERS } from '@angular/platform-browser';
+import { ROUTER_PROVIDERS } from '@angular/router';
 
 import {AppComponent} from './app/app.component';
 
@@ -13,7 +14,7 @@ if (process.env.ENV === 'build') {
 }
 
 bootstrap(AppComponent, [
-	// These are dependencies of our App
+	ROUTER_PROVIDERS,
 	...ENV_PROVIDERS
 ])
 .catch(err => console.error(err));
