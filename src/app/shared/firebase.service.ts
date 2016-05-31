@@ -11,11 +11,11 @@ export class FirebaseService {
 	};
 
 	uiConfig: Object = {
-		signInSuccessUrl: '',
+		signInSuccessUrl: '/',
 		signInOptions: [
 			firebase.auth.GoogleAuthProvider.PROVIDER_ID,
 		],
-		tosUrl: '',
+		tosUrl: '/',
 	};
 
 	app: any;

@@ -13,10 +13,14 @@ export interface User {
 @Injectable()
 export class AuthService {
 	user: User = { loggedIn: false };
+	started: Boolean = false;
 	authUI: any;
+	private notify: any[] = [];
 
 	constructor(private firebase: FirebaseService) {
 		firebase.auth.onAuthStateChanged(user => {
+			this.started = true;
+
 			if (!!user) {
 				this.user.loggedIn = true;
 				this.user.name = user.displayName;
@@ -27,6 +31,22 @@ export class AuthService {
 				this.user.name = null;
 				this.user.email = null;
 				this.user.uid = null;
+			}
+
+			this.notify.forEach(val => {
+				val.call();
+			});
+		});
+	}
+
+	isAuthenticated() {
+		return new Promise((resolve, reject) => {
+			if (!this.started) {
+				this.notify.push(() => {
+					this.user.loggedIn ? resolve() : reject();
+				});
+			} else {
+				this.user.loggedIn ? resolve() : reject();
 			}
 		});
 	}
