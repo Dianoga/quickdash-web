@@ -1,7 +1,8 @@
 <main>
-	<h1 class="title">Hello from {{api.title}}!</h1>
-	<a [routerLink]="['Dashboard']">Home</a>
-	<a [routerLink]="['Login']" *ngIf="!auth.user.loggedIn">Login</a>
+	<nav *ngIf="!auth.user.loggedIn">
+		<a [routerLink]="['Dashboard']">Home</a>
+		<a [routerLink]="['Login']" *ngIf="!auth.user.loggedIn">Login</a>
+	</nav>
 
 	<router-outlet></router-outlet>
 </main>
