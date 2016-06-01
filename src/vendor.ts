@@ -11,3 +11,4 @@ import 'rxjs';
 
 import 'firebase';
 import 'lodash';
+import 'bootstrap';
