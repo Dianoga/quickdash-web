@@ -1,4 +1,7 @@
+import * as _ from 'lodash';
 import { Injectable } from '@angular/core';
+import { Device } from './device.service';
+
 const firebase = require('firebase');
 
 @Injectable()
@@ -25,5 +28,48 @@ export class FirebaseService {
 	constructor() {
 		this.app = firebase.initializeApp(this.config);
 		this.auth = this.app.auth();
+	}
+
+	watchDevices(devices: Device[]) {
+		console.log('getting data');
+		this.app.database().ref('devices').on('value', snapshot => {
+			this.arrayReplace(devices, _.values(snapshot.val()));
+			console.log(devices);
+		});
+	}
+
+	private arrayReplace(dusty: any[], shiny: any[]) {
+		const toKeep = _.map(shiny, 'id');
+		console.log(toKeep);
+
+		// Delete ids that don't exist anymore
+		_.remove(dusty, val => {
+			return _.indexOf(toKeep, val.id) === -1;
+		});
+
+		_.forEach(shiny, val => {
+			const toUpdate = _.find(dusty, { id: val.id });
+			if (toUpdate) {
+				this.objectReplace(toUpdate, val);
+			} else {
+				dusty.push(val);
+			}
+		});
+	}
+
+	private objectReplace(dusty: Object, shiny: Object) {
+		// Delete keys that don't exist anymore
+		const toDelete = _.difference(_.keys(dusty), _.keys(shiny));
+		_.map(toDelete, val => {
+			delete dusty[val];
+		});
+
+		_.forEach(shiny, (val, key) => {
+			console.log(key, val);
+			// Create if it doesn't exist
+			if (!dusty[key]) {
+				dusty[key] = val;
+			}
+		});
 	}
 }
