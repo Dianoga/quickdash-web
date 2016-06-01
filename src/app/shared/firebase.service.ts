@@ -34,13 +34,11 @@ export class FirebaseService {
 		console.log('getting data');
 		this.app.database().ref('devices').on('value', snapshot => {
 			this.arrayReplace(devices, _.values(snapshot.val()));
-			console.log(devices);
 		});
 	}
 
 	private arrayReplace(dusty: any[], shiny: any[]) {
 		const toKeep = _.map(shiny, 'id');
-		console.log(toKeep);
 
 		// Delete ids that don't exist anymore
 		_.remove(dusty, val => {
@@ -65,9 +63,10 @@ export class FirebaseService {
 		});
 
 		_.forEach(shiny, (val, key) => {
-			console.log(key, val);
 			// Create if it doesn't exist
 			if (!dusty[key]) {
+				dusty[key] = val;
+			} else if (dusty[key] !== val) {
 				dusty[key] = val;
 			}
 		});
