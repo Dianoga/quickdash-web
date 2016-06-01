@@ -161,6 +161,11 @@ module.exports = function makeWebpackConfig() {
       'process.env': {
         ENV: JSON.stringify(ENV)
       }
+    }),
+
+    new webpack.ProvidePlugin({
+    	'$': 'jquery',
+    	'jQuery': 'jquery'
     })
   ];
 

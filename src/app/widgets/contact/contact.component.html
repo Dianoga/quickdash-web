@@ -1,0 +1,6 @@
+<div class='widget-contact' [ngClass]="isEverythingAwesome() ? 'awesome' : 'awful'" [ngSwitch]="isEverythingAwesome()">
+	<div *ngSwitchWhen="true">All closed</div>
+	<div *ngSwitchDefault>
+		<div *ngFor="let s of awfulSensors();">{{s.name}}</div>
+	</div>
+</div>

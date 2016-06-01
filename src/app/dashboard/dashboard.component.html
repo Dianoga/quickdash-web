@@ -1,12 +1,1 @@
-<p>Hello Dashboard</p>
-
-<ul>
-	<li *ngFor="let device of devices">
-		{{device.id}}
-		<ul>
-			<li *ngFor="let prop of toPairs(device);">
-				{{prop[0]}}: {{prop[1]}}
-			</li>
-		</ul>
-	</li>
-</ul>
+<my-widget-contact *ngIf="devices.hasContactSensors()">Stuff goes here</my-widget-contact>
