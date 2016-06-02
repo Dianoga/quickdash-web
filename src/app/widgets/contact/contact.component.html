@@ -1,6 +1,20 @@
-<div class='widget-contact' [ngClass]="isEverythingAwesome() ? 'awesome' : 'awful'" [ngSwitch]="isEverythingAwesome()">
-	<div *ngSwitchWhen="true">All closed</div>
-	<div *ngSwitchDefault>
-		<div *ngFor="let s of awfulSensors();">{{s.name}}</div>
+<div class='widget-contact' [ngClass]="isEverythingAwesome() ? 'awesome' : 'awful'">
+
+	<div class='window-frame'>
+		<div class='window'>
+			<div class='pane top'></div>
+			<div class='pane bottom'></div>
+		</div>
+	</div>
+
+	<div class='content' [ngSwitch]="isEverythingAwesome()">
+		<div class='status' *ngSwitchWhen="true">All closed</div>
+		<div *ngSwitchDefault>
+			<div class='status'>Open</div>
+			<div class='details' [ngSwitch]="awfulSensors().length">
+				<div *ngSwitchWhen="1">{{awfulSensors()[0].name}}</div>
+				<div *ngSwitchDefault>{{awfulSensors().length}} things open</div>
+			</div>
+		</div>
 	</div>
 </div>
