@@ -1,4 +1,9 @@
 @import '../../node_modules/bootstrap/scss/bootstrap-flex';
+@import 'spinner';
+
+html, body {
+	background-color: $gray-dark;
+}
 
 my-app {
 	padding: $grid-gutter-width / 2 0;

@@ -1,8 +1,13 @@
 <main>
-	<nav *ngIf="!auth.user.loggedIn">
-		<a [routerLink]="['Dashboard']">Home</a>
-		<a [routerLink]="['Login']" *ngIf="!auth.user.loggedIn">Login</a>
-	</nav>
+	<div class="spinner" *ngIf="!auth.started">
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+	</div>
 
 	<router-outlet></router-outlet>
 </main>

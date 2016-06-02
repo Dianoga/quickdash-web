@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
-import { ApiService, AuthService, FirebaseService, DeviceService } from './shared';
+import { AuthService, FirebaseService, DeviceService } from './shared';
 import { LoginComponent } from './login';
 import { DashboardComponent } from './dashboard';
 
@@ -13,7 +13,7 @@ import '../style/app.scss';
  */
 @Component({
 	selector: 'my-app', // <my-app></my-app>
-	providers: [ApiService, AuthService, FirebaseService, DeviceService],
+	providers: [AuthService, FirebaseService, DeviceService],
 	template: require('./app.component.html'),
 	styles: [require('./app.component.scss')],
 	directives: [...ROUTER_DIRECTIVES]
@@ -23,6 +23,6 @@ import '../style/app.scss';
 	{ path: '/login', component: LoginComponent, name: 'Login' }
 ])
 export class AppComponent {
-	constructor(private api: ApiService, private auth: AuthService) {
+	constructor(private auth: AuthService) {
 	}
 }
