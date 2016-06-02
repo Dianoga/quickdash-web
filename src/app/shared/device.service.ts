@@ -22,4 +22,12 @@ export class DeviceService {
 	getContactSensors(): Device[] {
 		return _.filter(this.devices, { type: 'contact' });
 	}
+
+	hasTemperatureSensors(): Boolean {
+		return !!_.find(this.devices, { type: 'temperature' });
+	}
+
+	getTemperatureSensors(): Device[] {
+		return _.filter(this.devices, { type: 'temperature' });
+	}
 }

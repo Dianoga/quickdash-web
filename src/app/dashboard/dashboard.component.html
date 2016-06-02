@@ -1,1 +1,4 @@
-<my-widget-contact *ngIf="devices.hasContactSensors()">Stuff goes here</my-widget-contact>
+<div class='row'>
+	<my-widget-contact class='widget col-sm-4' *ngIf="devices.hasContactSensors()">Working...</my-widget-contact>
+	<my-widget-temperature class='widget col-sm-4' *ngIf="devices.hasTemperatureSensors()">Working...</my-widget-temperature>
+</div>

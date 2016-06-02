@@ -1,0 +1,6 @@
+<div class='widget-contact'>
+	<div *ngFor="let device of getDevices()">
+		<span class='col-xs-6 text-right'>{{device.name}}</span>
+		<span class='col-xs-6'>{{device.temperature}}</span>
+	</div>
+</div>
