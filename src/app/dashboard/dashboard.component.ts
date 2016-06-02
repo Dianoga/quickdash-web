@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { OnActivate, Router } from '@angular/router-deprecated';
 import { Location } from '@angular/common';
 import { AuthService, FirebaseService, DeviceService } from '../shared';
-import { ContactComponent, TemperatureComponent } from '../widgets';
+import { ContactComponent, DoorControlComponent, TemperatureComponent } from '../widgets';
 
 @Component({
 	selector: 'my-dashboard',
 	template: require('./dashboard.component.html'),
 	styles: [require('./dashboard.component.scss')],
-	directives: [ContactComponent, TemperatureComponent]
+	directives: [ContactComponent, DoorControlComponent, TemperatureComponent]
 })
 export class DashboardComponent implements OnInit, OnActivate {
 	constructor(

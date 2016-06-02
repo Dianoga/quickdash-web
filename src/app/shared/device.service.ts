@@ -30,4 +30,12 @@ export class DeviceService {
 	getTemperatureSensors(): Device[] {
 		return _.filter(this.devices, { type: 'temperature' });
 	}
+
+	hasDoorControl(): Boolean {
+		return !!_.find(this.devices, { type: 'door' });
+	}
+
+	getDoorControl(): Device {
+		return _.find(this.devices, { type: 'door' });
+	}
 }

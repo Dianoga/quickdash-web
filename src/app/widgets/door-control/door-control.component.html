@@ -1,0 +1,8 @@
+<div class='widget-door-control' [ngClass]="door.door !== 'closed' ? 'warn' : ''">
+	<div class='garage'>
+		<div class='roof'></div>
+		<div class='walls'></div>
+		<div class='hole'></div>
+		<div class='door' [ngClass]="door.door"></div>
+	</div>
+</div>
