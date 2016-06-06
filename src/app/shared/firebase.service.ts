@@ -4,6 +4,10 @@ import { Device } from './device.service';
 
 const firebase = require('firebase');
 
+export interface Settings {
+	commandUrl: string;
+}
+
 @Injectable()
 export class FirebaseService {
 	private config: Object = {
@@ -25,13 +29,18 @@ export class FirebaseService {
 	auth: any;
 	authUI: any;
 
+	settings: Settings;
+
 	constructor() {
 		this.app = firebase.initializeApp(this.config);
 		this.auth = this.app.auth();
+
+		this.app.database().ref('settings').on('value', snapshot => {
+			this.settings = snapshot.val();
+		});
 	}
 
 	watchDevices(devices: Device[]) {
-		console.log('getting data');
 		this.app.database().ref('devices').on('value', snapshot => {
 			this.arrayReplace(devices, _.values(snapshot.val()));
 		});

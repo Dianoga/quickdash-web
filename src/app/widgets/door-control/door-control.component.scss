@@ -91,16 +91,14 @@ $doorLeft: (($totalWidth - $wallWidth) / 2) + ($wallWidth - $doorWidth) / 2;
 
 	background: $building-color;
 	box-shadow:
-		inset 0px 0px 6px #ddd,
-		inset 0px calc(50px / 3) 0px rgba(255, 255, 255, 0.5),
-		inset 0px calc(50px / -3) 0px rgba(255, 255, 255, 0.5);
+		inset 0px 0px 6px #ccc;
 
 	&.opening {
-		animation: door-opening 4s infinite linear;
+		animation: door-opening 2s infinite linear;
 	}
 
 	&.closing {
-		animation: door-closing 4s infinite linear;
+		animation: door-closing 2s infinite linear;
 	}
 
 	&.open, &.closing {
