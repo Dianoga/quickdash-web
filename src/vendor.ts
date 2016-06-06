@@ -13,4 +13,5 @@ import 'firebase';
 import 'lodash';
 
 import 'jquery';
+import 'tether';
 import 'bootstrap';

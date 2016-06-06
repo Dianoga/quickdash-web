@@ -30,11 +30,11 @@ module.exports = function makeWebpackConfig() {
    * Reference: http://webpack.github.io/docs/configuration.html#devtool
    * Type of sourcemap to use per build type
    */
-  if (isProd) {
+  // if (isProd) {
     config.devtool = 'source-map';
-  } else {
-    config.devtool = 'eval-source-map';
-  }
+  // } else {
+    // config.devtool = 'eval-source-map';
+  // }
 
   // add debug messages
   config.debug = !isProd || !isTest;
@@ -172,7 +172,9 @@ module.exports = function makeWebpackConfig() {
 
     new webpack.ProvidePlugin({
     	'$': 'jquery',
-    	'jQuery': 'jquery'
+    	'jQuery': 'jquery',
+    	'Tether': 'tether',
+    	'window.Tether': 'tether'
     })
   ];
 
