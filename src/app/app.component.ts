@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { AuthService, FirebaseService, DeviceService } from './shared';
 import { LoginComponent } from './login';
