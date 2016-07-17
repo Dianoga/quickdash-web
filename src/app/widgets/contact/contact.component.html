@@ -12,7 +12,7 @@
 		<div *ngSwitchDefault>
 			<div class='status'>Open</div>
 			<div class='details' [ngSwitch]="awfulSensors().length">
-				<div *ngSwitchWhen="1">{{awfulSensors()[0].name}}</div>
+				<div *ngSwitchCase="1">{{awfulSensors()[0].name}}</div>
 				<div *ngSwitchDefault>{{awfulSensors().length}} things open</div>
 			</div>
 		</div>
