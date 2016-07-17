@@ -48,12 +48,12 @@ export class DeviceService {
 		return _.filter(this.devices, 'contact');
 	}
 
-	hasTemperatureSensors(): Boolean {
-		return !!_.find(this.devices, 'temperature');
+	hasFloors(): Boolean {
+		return !!_.find(this.devices, { type: 'floor' });
 	}
 
-	getTemperatureSensors(): Device[] {
-		return _.filter(this.devices, 'temperature');
+	getFloors(): Device[] {
+		return _.filter(this.devices, { type: 'floor' });
 	}
 
 	hasDoorControl(): Boolean {

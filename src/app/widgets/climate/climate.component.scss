@@ -1,0 +1,31 @@
+@import '../../../style/_variables';
+
+$floorHeight: 50px;
+
+.widget-climate {
+	background: $brand-success;
+	height: 100%;
+
+	background: $background-color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.floor {
+	margin: 0 $wallMargin;
+	width: $wallWidth;
+	background: $building-color;
+	margin-top: 1px;
+	display: flex;
+}
+
+:host .temperature {
+	flex: 1 1 auto;
+	text-align: center;
+};
+
+:host .humidity {
+	flex: 1 1 auto;
+	text-align: center;
+};

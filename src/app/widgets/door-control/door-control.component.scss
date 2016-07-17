@@ -1,22 +1,6 @@
 @import '../../../style/_variables';
 
-$building-color: rgba(255, 255, 255, 0.9);
-$background-color: $brand-success;
-$warn-color: $brand-warning;
-
-$totalHeight: 150px;
-$totalWidth: 150px;
 $doorFrameWidth: 3px;
-
-$roofWidth: ($totalWidth * .75);
-$roofHeight: ($totalWidth * .25);
-
-$wallWidth: ($totalWidth * .6);
-$wallHeight: ($totalHeight * .4);
-$wallMargin: ($roofWidth - $wallWidth) / 2;
-
-$buildingHeight: $roofHeight + $wallHeight;
-$buildingMarginHeight: ($totalHeight - $buildingHeight) / 2;
 
 $holeWidth: ($totalWidth * .45);
 $holeHeight: ($totalHeight * (1/3));
@@ -40,25 +24,6 @@ $doorLeft: (($totalWidth - $wallWidth) / 2) + ($wallWidth - $doorWidth) / 2;
 	&.warn, &.warn .hole {
 		background: $brand-warning;
 	}
-}
-
-.garage {
-	width: $totalWidth;
-	height: $totalHeight;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	position: relative;
-}
-
-.roof {
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0 $roofWidth/2 $roofHeight $roofWidth/2;
-	border-color: transparent transparent $building-color transparent;
 }
 
 .walls {

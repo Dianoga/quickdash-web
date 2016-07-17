@@ -1,1 +1,19 @@
 @import '../../node_modules/bootstrap/scss/variables';
+
+$background-color: $brand-success;
+$warn-color: $brand-warning;
+
+$building-color: rgba(255, 255, 255, 0.9);
+
+$totalHeight: 150px;
+$totalWidth: 150px;
+
+$roofWidth: ($totalWidth * .75);
+$roofHeight: ($totalWidth * .25);
+
+$wallWidth: ($totalWidth * .6);
+$wallHeight: ($totalHeight * .4);
+$wallMargin: ($roofWidth - $wallWidth) / 2;
+
+$buildingHeight: $roofHeight + $wallHeight;
+$buildingMarginHeight: ($totalHeight - $buildingHeight) / 2;
