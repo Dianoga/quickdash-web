@@ -41,26 +41,26 @@ export class DeviceService {
 	}
 
 	hasContactSensors(): Boolean {
-		return !!_.find(this.devices, { type: 'contact' });
+		return !!_.find(this.devices, 'contact');
 	}
 
 	getContactSensors(): Device[] {
-		return _.filter(this.devices, { type: 'contact' });
+		return _.filter(this.devices, 'contact');
 	}
 
 	hasTemperatureSensors(): Boolean {
-		return !!_.find(this.devices, { type: 'temperature' });
+		return !!_.find(this.devices, 'temperature');
 	}
 
 	getTemperatureSensors(): Device[] {
-		return _.filter(this.devices, { type: 'temperature' });
+		return _.filter(this.devices, 'temperature');
 	}
 
 	hasDoorControl(): Boolean {
-		return !!_.find(this.devices, { type: 'door' });
+		return !!_.find(this.devices, 'door');
 	}
 
 	getDoorControl(): Device {
-		return _.find(this.devices, { type: 'door' });
+		return _.find(this.devices, 'door');
 	}
 }
