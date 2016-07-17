@@ -40,15 +40,17 @@ export class AuthService {
 	}
 
 	isAuthenticated() {
-		return new Promise((resolve, reject) => {
+		const promise = new Promise((resolve, reject) => {
 			if (!this.started) {
 				this.notify.push(() => {
-					this.user.loggedIn ? resolve() : reject();
+					this.user.loggedIn ? resolve(true) : reject(false);
 				});
 			} else {
-				this.user.loggedIn ? resolve() : reject();
+				this.user.loggedIn ? resolve(true) : reject(false);
 			}
 		});
+
+		return promise;
 	}
 
 	startUI() {
