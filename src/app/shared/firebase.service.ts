@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { Injectable } from '@angular/core';
+import { Injectable, ChangeDetectorRef } from '@angular/core';
 import { Device } from './device.service';
 
 const firebase = require('firebase');
@@ -31,7 +31,7 @@ export class FirebaseService {
 
 	settings: Settings;
 
-	constructor() {
+	constructor(private ref: ChangeDetectorRef) {
 		this.app = firebase.initializeApp(this.config);
 		this.auth = this.app.auth();
 
@@ -43,6 +43,7 @@ export class FirebaseService {
 	watchDevices(devices: Device[]) {
 		this.app.database().ref('devices').on('value', snapshot => {
 			this.arrayReplace(devices, _.values(snapshot.val()));
+			this.ref.detectChanges();
 		});
 	}
 
