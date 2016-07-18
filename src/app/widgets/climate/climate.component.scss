@@ -3,13 +3,50 @@
 $floorHeight: 50px;
 
 .widget-climate {
-	background: $brand-success;
 	height: 100%;
 
-	background: $background-color;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	.building {
+		flex: 1 1 auto;
+		height: auto;
+	}
+}
+
+.outdoorWeather {
+	flex: 1 1 auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	color: white;
+
+	&>div {
+		flex: 1 1 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		font-size: 2vw;
+	}
+
+	.conditions {
+		text-align: center;
+		font-size: 6vw;
+		margin-bottom: 10px
+	}
+
+	.temperature {
+		text-align: center;
+		font-size: 4vw;
+		margin-bottom: 10px
+	}
+
+	.humidity span,
+	.wind span {
+		padding-right: 5px;
+	}
 }
 
 .floor {
@@ -18,14 +55,15 @@ $floorHeight: 50px;
 	background: $building-color;
 	margin-top: 1px;
 	display: flex;
+	color: $gray-dark;
+
+	.temperature {
+		flex: 1 1 auto;
+		text-align: center;
+	}
+
+	.humidity {
+		flex: 1 1 auto;
+		text-align: center;
+	}
 }
-
-:host .temperature {
-	flex: 1 1 auto;
-	text-align: center;
-};
-
-:host .humidity {
-	flex: 1 1 auto;
-	text-align: center;
-};

@@ -1,5 +1,3 @@
-<div class='row'>
-	<my-widget-contact class='widget col-sm-4' *ngIf="devices.hasContactSensors()">Working...</my-widget-contact>
-	<my-widget-door-control class='widget col-sm-4' *ngIf="devices.hasDoorControl()">Working...</my-widget-door-control>
-	<my-widget-climate class='widget col-sm-4' *ngIf="devices.hasFloors()">Working...</my-widget-climate>
-</div>
+<my-widget-contact class='widget' *ngIf="devices.hasContactSensors()">Working...</my-widget-contact>
+<my-widget-door-control class='widget' *ngIf="devices.hasDoorControl()">Working...</my-widget-door-control>
+<my-widget-climate class='widget' *ngIf="devices.hasFloors()">Working...</my-widget-climate>

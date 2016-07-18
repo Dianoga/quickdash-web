@@ -1,8 +1,17 @@
 <div class='widget-climate'>
-	<div class='outdoorWeather' *ngIf="devices.hasOutdoorWeather()">
-		{{devices.getOutdoorWeather().temperature}}
-		{{devices.getOutdoorWeather().humidity}}
-		{{devices.getOutdoorWeather().wind}}
+	<div class='outdoorWeather' *ngIf="outdoorWeather">
+		<div class='conditions'>
+			<span class="icon-{{iconMap[outdoorWeather.weatherIcon]}}"></span>
+		</div>
+		<div class='temperature'>
+			{{outdoorWeather.temperature}}&deg;
+		</div>
+		<div class='humidity'>
+			<span class='icon-humidity'></span> {{outdoorWeather.humidity}}%
+		</div>
+		<div class='wind'>
+			<span class='icon-w-windy'></span> {{outdoorWeather.wind}}
+		</div>
 	</div>
 
 	<div class='building'>

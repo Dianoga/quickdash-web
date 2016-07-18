@@ -2,6 +2,7 @@
 
 .widget-contact {
 	min-height:	150px;
+	min-width: 33vw;
 	color: white;
 
 	display: flex;
@@ -40,30 +41,29 @@
 	width: 70px;
 	border-width: 8px;
 	border-style: solid;
-	border-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
-
+	border-color: #d8d8d8 #eeeeee;
 
 	.pane {
 		background: rgba(255, 255, 255, .3);
-		border: 3px solid rgba(255, 255, 255, .9);
+		border: 3px solid #743;
 		height: 50%;
 		transition: margin-top 1s;
 	}
 }
 
 .awesome {
-	background: $brand-success;
-
 	.content .status {
 		font-size: 2.5vw;
 	}
 }
 
 .awful {
-	background: $brand-warning;
+	.window {
+		background: $warn-color;
 
-	.window .pane.bottom {
-		margin-top: -75%;
+		.pane.bottom {
+			margin-top: -75%;
+		}
 	}
 }
 

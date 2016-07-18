@@ -14,15 +14,14 @@ $doorLeft: (($totalWidth - $wallWidth) / 2) + ($wallWidth - $doorWidth) / 2;
 
 .widget-door-control {
 	height: 100%;
-	background: $background-color;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	transition: background-color 0.5s;
 
-	&.warn, &.warn .hole {
-		background: $brand-warning;
+	&.warn .hole {
+		background: $warn-color;
 	}
 }
 

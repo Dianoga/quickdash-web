@@ -1,0 +1,13 @@
+@import '../../style/_variables';
+
+:host {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.widget {
+	border: 2px solid #fff;
+	border-radius: 3px;
+	padding: 5px;
+}
