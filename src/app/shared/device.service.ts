@@ -56,6 +56,14 @@ export class DeviceService {
 		return _.filter(this.devices, { type: 'floor' });
 	}
 
+	hasOutdoorWeather(): Boolean {
+		return !!_.find(this.devices, { type: 'outdoorWeather' });
+	}
+
+	getOutdoorWeather(): Device {
+		return _.find(this.devices, { type: 'outdoorWeather' });
+	}
+
 	hasDoorControl(): Boolean {
 		return !!_.find(this.devices, 'door');
 	}
