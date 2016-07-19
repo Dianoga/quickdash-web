@@ -1,0 +1,18 @@
+<div class='widget-switch' [ngClass]="isEverythingAwesome() ? 'awesome' : 'awful'" (click)="navigate()">
+
+	<div class='bulb'>
+		<span class='icon-lightbulb'></span>
+		<span class='glowpoint'></span>
+	</div>
+
+	<div class='content' [ngSwitch]="isEverythingAwesome()">
+		<div class='status' *ngSwitchCase="true">All off</div>
+		<div *ngSwitchDefault>
+			<div class='status'>On</div>
+			<div class='details' [ngSwitch]="awfulSwitches().length">
+				<div *ngSwitchCase="1">{{awfulSwitches()[0].name}}</div>
+				<div *ngSwitchDefault>{{awfulSwitches().length}} things on</div>
+			</div>
+		</div>
+	</div>
+</div>

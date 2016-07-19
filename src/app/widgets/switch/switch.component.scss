@@ -1,0 +1,77 @@
+@import '../../../style/_variables';
+
+.widget-switch {
+	min-height:	150px;
+	min-width: 33vw;
+	color: white;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: 0.5s background-color;
+}
+
+.bulb {
+	flex: 1 1 percentage(1/3);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	span {
+		font-size: 100px;
+	}
+
+	.glowpoint {
+		position: relative;
+		left: -50%;
+		margin-top: -25%;
+		transition: 0.5s box-shadow;
+	}
+}
+
+.content {
+	flex: 2 1 percentage(2/3);
+	display: flex;
+	justify-content: center;
+
+	.status {
+		display: flex;
+		font-size: 2vw;
+		justify-content: center;
+	}
+
+	.details {
+		display: flex;
+		font-size: 1.5vw;
+	}
+}
+
+.window {
+	height: 110px;
+	width: 70px;
+	border-width: 8px;
+	border-style: solid;
+	border-color: #d8d8d8 #eeeeee;
+
+	.pane {
+		background: rgba(255, 255, 255, .3);
+		border: 3px solid #743;
+		height: 50%;
+		transition: margin-top 1s;
+	}
+}
+
+.awesome {
+	.content .status {
+		font-size: 2.5vw;
+	}
+}
+
+.awful {
+	.glowpoint {
+		box-shadow: 0 0 75px 40px yellow;
+	}
+}
+
+

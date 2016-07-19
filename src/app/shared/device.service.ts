@@ -56,6 +56,14 @@ export class DeviceService {
 		return _.filter(this.devices, 'contact');
 	}
 
+	hasSwitches(): Boolean {
+		return !!_.find(this.devices, 'switch');
+	}
+
+	getSwitches(): Device[] {
+		return _.filter(this.devices, 'switch');
+	}
+
 	hasFloors(): Boolean {
 		return !!_.find(this.devices, { type: 'floor' });
 	}

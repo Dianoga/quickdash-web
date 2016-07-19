@@ -3,7 +3,8 @@ import { provideRouter, RouterConfig } from '@angular/router';
 // import { AuthGuard } from './shared';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ContactListComponent } from './widgets//contact';
+import { ContactListComponent } from './widgets/contact';
+import { SwitchListComponent } from './widgets/switch';
 
 export const AppRoutes: RouterConfig = [
 	{
@@ -23,6 +24,10 @@ export const AppRoutes: RouterConfig = [
 	{
 		path: 'contact',
 		component: ContactListComponent,
+	},
+	{
+		path: 'switch',
+		component: SwitchListComponent,
 	}
 ];
 

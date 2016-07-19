@@ -1,0 +1,6 @@
+<div class='list list-switch'>
+	<a routerLink="/dashboard" class='to-dashboard'>&larr;</a>
+	<div *ngFor="let device of getDevices()" class='switch' [ngClass]="device.switch">
+		{{device.name}}
+	</div>
+</div>
