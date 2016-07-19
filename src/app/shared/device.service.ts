@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { Injectable, ChangeDetectorRef } from '@angular/core';
+import { Injectable, ApplicationRef } from '@angular/core';
 import { Http, RequestOptions, URLSearchParams } from '@angular/http';
 import { FirebaseService } from './firebase.service';
 
@@ -18,12 +18,12 @@ export interface Device {
 export class DeviceService {
 	devices: Device[] = [];
 
-	constructor(private http: Http, private firebase: FirebaseService, private ref: ChangeDetectorRef) {}
+	constructor(private http: Http, private firebase: FirebaseService, private ref: ApplicationRef) {}
 
 	watch() {
 		this.firebase.watch('devices', snapshot => {
 			this.firebase.arrayReplace(this.devices, _.values(snapshot.val()));
-			this.ref.detectChanges();
+			this.ref.tick();
 		});
 	}
 

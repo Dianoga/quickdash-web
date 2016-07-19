@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DeviceService, Device } from '../../shared';
 
 @Component({
@@ -8,7 +9,7 @@ import { DeviceService, Device } from '../../shared';
 	styles: [require('./contact.component.scss')]
 })
 export class ContactComponent {
-	constructor(private devices: DeviceService) {
+	constructor(private devices: DeviceService, private router: Router) {
 	}
 
 	isEverythingAwesome() {
@@ -17,5 +18,9 @@ export class ContactComponent {
 
 	awfulSensors(): Device[] {
 		return _.filter(this.devices.getContactSensors(), { contact: 'open' });
+	}
+
+	navigate(): void {
+		this.router.navigate(['contact']);
 	}
 }

@@ -1,4 +1,4 @@
-import { enableProdMode } from '@angular/core';
+import { enableProdMode, ChangeDetectorRef } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { HTTP_PROVIDERS } from '@angular/http';
 
@@ -12,6 +12,7 @@ if (process.env.ENV === 'build') {
 }
 
 bootstrap(AppComponent, [
+	ChangeDetectorRef,
 	...HTTP_PROVIDERS,
 	...APP_ROUTER_PROVIDERS,
 	...APP_SERVICE_PROVIDERS
