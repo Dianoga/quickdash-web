@@ -4,6 +4,7 @@ $floorHeight: 50px;
 
 .widget-climate {
 	height: 100%;
+	max-width: 40vw;
 
 	display: flex;
 	justify-content: center;
@@ -44,7 +45,8 @@ $floorHeight: 50px;
 	}
 
 	.humidity span,
-	.wind span {
+	.wind span,
+	.alert span {
 		padding-right: 5px;
 	}
 }

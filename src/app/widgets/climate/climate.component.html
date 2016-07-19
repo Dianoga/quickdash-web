@@ -12,6 +12,9 @@
 		<div class='wind'>
 			<span class='icon-w-windy'></span> {{outdoorWeather.wind}}
 		</div>
+		<div class='alert' *ngIf='outdoorWeather.alert'>
+			<span class='icon-alert'></span> {{outdoorWeather.alert}}
+		</div>
 	</div>
 
 	<div class='building'>
