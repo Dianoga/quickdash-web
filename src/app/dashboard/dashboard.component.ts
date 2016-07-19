@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { HTTP_PROVIDERS } from '@angular/http';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FirebaseService, DeviceService } from '../shared';
 import { ContactComponent, DoorControlComponent, ClimateComponent } from '../widgets';
 
@@ -7,7 +6,7 @@ import { ContactComponent, DoorControlComponent, ClimateComponent } from '../wid
 	selector: 'my-dashboard',
 	template: require('./dashboard.component.html'),
 	styles: [require('./dashboard.component.scss')],
-	providers: [DeviceService, ...HTTP_PROVIDERS],
+	providers: [DeviceService, ChangeDetectorRef],
 	directives: [ContactComponent, DoorControlComponent, ClimateComponent]
 })
 export class DashboardComponent implements OnInit {
@@ -18,6 +17,6 @@ export class DashboardComponent implements OnInit {
 
 	ngOnInit() {
 		console.log('Hello dashboard');
-		this.data.watchDevices(this.devices.devices);
+		this.devices.watch();
 	}
 }

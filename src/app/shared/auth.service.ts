@@ -39,8 +39,8 @@ export class AuthService {
 		});
 	}
 
-	isAuthenticated() {
-		const promise = new Promise((resolve, reject) => {
+	isAuthenticated(): Promise<boolean> {
+		const promise = new Promise<boolean>((resolve, reject) => {
 			if (!this.started) {
 				this.notify.push(() => {
 					this.user.loggedIn ? resolve(true) : reject(false);

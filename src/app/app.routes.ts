@@ -1,4 +1,6 @@
 import { provideRouter, RouterConfig } from '@angular/router';
+
+// import { AuthGuard } from './shared';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -8,7 +10,7 @@ export const AppRoutes: RouterConfig = [
 		component: LoginComponent
 	},
 	{
-		path: '',
+		path: 'dashboard',
 		component: DashboardComponent,
 		// canActivate: [AuthGuard]
 	},

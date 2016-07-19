@@ -1,6 +1,5 @@
 import * as _ from 'lodash';
-import { Injectable, ChangeDetectorRef } from '@angular/core';
-import { Device } from './device.service';
+import { Injectable } from '@angular/core';
 
 const firebase = require('firebase');
 
@@ -31,7 +30,7 @@ export class FirebaseService {
 
 	settings: Settings;
 
-	constructor(private ref: ChangeDetectorRef) {
+	constructor() {
 		this.app = firebase.initializeApp(this.config);
 		this.auth = this.app.auth();
 
@@ -40,14 +39,11 @@ export class FirebaseService {
 		});
 	}
 
-	watchDevices(devices: Device[]) {
-		this.app.database().ref('devices').on('value', snapshot => {
-			this.arrayReplace(devices, _.values(snapshot.val()));
-			this.ref.detectChanges();
-		});
+	watch(path, cb): void {
+		this.app.database().ref(path).on('value', cb);
 	}
 
-	private arrayReplace(dusty: any[], shiny: any[]) {
+	arrayReplace(dusty: any[], shiny: any[]): void {
 		const toKeep = _.map(shiny, 'id');
 
 		// Delete ids that don't exist anymore
