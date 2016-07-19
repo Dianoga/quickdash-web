@@ -12,6 +12,7 @@ export interface Device {
 	id: string;
 	type: string;
 	door?: string;
+	contact?: string;
 }
 
 @Injectable()

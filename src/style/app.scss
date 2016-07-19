@@ -29,3 +29,13 @@ my-app {
 	border-width: 0 $roofWidth/2 $roofHeight $roofWidth/2;
 	border-color: transparent transparent $building-color transparent;
 }
+
+.to-dashboard {
+	background-color: $gray-light;
+	color: white;
+
+	margin: 0 $grid-gutter-width/2 $grid-gutter-width/2 0;
+	padding: $grid-gutter-width/4;
+	border: 1px solid;
+	border-radius: 3px;
+}

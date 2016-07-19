@@ -1,1 +1,25 @@
 @import '../../../style/_variables';
+
+.list-contact {
+	display: flex;
+	flex-wrap: wrap;
+
+	.contact {
+		transition: 0.5s background-color, 0.5s border-color;
+
+		margin: 0 $grid-gutter-width/2 $grid-gutter-width/2 0;
+		padding: $grid-gutter-width/4;
+		border: 1px solid;
+		border-radius: 3px;
+	}
+
+	.open {
+		background-color: $warn-color;
+		border-color: darken($warn-color, 20%);
+	}
+
+	.closed {
+		background-color: $good-color;
+		border-color: darken($good-color, 20%);
+	}
+}

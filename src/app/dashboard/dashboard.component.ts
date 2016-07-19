@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FirebaseService, DeviceService } from '../shared';
 import { ContactComponent, DoorControlComponent, ClimateComponent } from '../widgets';
 
@@ -8,14 +8,9 @@ import { ContactComponent, DoorControlComponent, ClimateComponent } from '../wid
 	styles: [require('./dashboard.component.scss')],
 	directives: [ContactComponent, DoorControlComponent, ClimateComponent]
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 	constructor(
 		private data: FirebaseService,
 		private devices: DeviceService
 	) {	}
-
-	ngOnInit() {
-		console.log('Hello dashboard');
-		this.devices.watch();
-	}
 }

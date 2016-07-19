@@ -1,5 +1,6 @@
 <div class='list list-contact'>
-	<div *ngFor="let device of devices.getContactSensors()">
-		{{device.id}}
+	<a routerLink="/dashboard" class='to-dashboard'>&larr;</a>
+	<div *ngFor="let device of getDevices()" class='contact' [ngClass]="device.contact">
+		{{device.name}}
 	</div>
 </div>
