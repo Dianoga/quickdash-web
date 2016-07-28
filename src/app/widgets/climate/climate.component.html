@@ -21,7 +21,7 @@
 		<div class='roof'></div>
 		<div *ngFor="let device of getDevices()" class='floor'>
 			<span class='temperature' *ngIf='device.temperature'>{{device.temperature}}&deg;</span>
-			<span class='humidity' *ngIf='device.humidity'>{{device.humidity}}&deg;</span>
+			<span class='humidity' *ngIf='device.humidity'>{{device.humidity}}</span>
 		</div>
 	</div>
 </div>
