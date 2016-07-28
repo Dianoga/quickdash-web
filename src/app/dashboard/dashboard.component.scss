@@ -12,5 +12,25 @@
 	padding: 5px;
 	position: relative;
 
-	margin-bottom: $grid-gutter-width/2;
+	margin: $grid-gutter-width/2;
+}
+
+my-widget-contact {
+	flex: 2 1 auto;
+}
+
+my-widget-door-control {
+	flex: 2 1 auto;
+}
+
+my-widget-switch {
+	flex: 1 1 auto;
+}
+
+my-widget-climate {
+	flex: 1 2 auto;
+}
+
+.placeholder {
+	flex: 1 2 auto;
 }
