@@ -23,9 +23,9 @@
 	}
 
 	.glowpoint {
-		position: relative;
-		left: -50%;
-		margin-top: -25%;
+		position: absolute;
+		left: 17%;
+		top: 35%;
 		transition: 0.5s box-shadow;
 	}
 }
