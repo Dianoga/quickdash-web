@@ -1,0 +1,15 @@
+.widget-list {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 2.5vw;
+
+	.item {
+		transition: 0.5s background-color, 0.5s border-color;
+
+		margin: 0 $grid-gutter-width/2 $grid-gutter-width/2 0;
+		padding: $grid-gutter-width/4;
+		border: 1px solid;
+		border-radius: 3px;
+		flex: 1 1 auto;
+	}
+}

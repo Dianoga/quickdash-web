@@ -1,18 +1,6 @@
 @import '../../../style/_variables';
 
 .list-switch {
-	display: flex;
-	flex-wrap: wrap;
-
-	.switch {
-		transition: 0.5s background-color, 0.5s border-color;
-
-		margin: 0 $grid-gutter-width/2 $grid-gutter-width/2 0;
-		padding: $grid-gutter-width/4;
-		border: 1px solid;
-		border-radius: 3px;
-	}
-
 	.on {
 		background-color: $warn-color;
 		border-color: darken($warn-color, 20%);

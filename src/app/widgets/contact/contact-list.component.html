@@ -1,6 +1,6 @@
-<div class='list list-contact'>
+<div class='widget-list list-contact'>
 	<a routerLink="/dashboard" class='to-dashboard'>&larr;</a>
-	<div *ngFor="let device of getDevices()" class='contact' [ngClass]="device.contact">
+	<div *ngFor="let device of getDevices()" class='item contact' [ngClass]="device.contact">
 		{{device.name}}
 	</div>
 </div>
