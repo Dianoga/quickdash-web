@@ -11,26 +11,30 @@
 	border-radius: 3px;
 	padding: 5px;
 	position: relative;
+	display: flex;
+	height: 33vh;
 
-	margin: $grid-gutter-width/2;
+	margin: 1vw;
 }
 
 my-widget-contact {
-	flex: 2 1 auto;
+	width: 37vw;
 }
 
 my-widget-door-control {
-	flex: 2 1 auto;
-}
-
-my-widget-switch {
 	flex: 1 1 auto;
 }
 
-my-widget-climate {
-	flex: 1 2 auto;
+my-widget-switch {
+	width: 37vw;
 }
 
-.placeholder {
-	flex: 1 2 auto;
+my-widget-climate {
+	width: 37vw;
+	height: 60vh !important;
+}
+
+.placeholder.row {
+	flex: 1 1 auto;
+	width: 100%;
 }

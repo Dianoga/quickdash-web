@@ -2,5 +2,7 @@
 <my-widget-switch class='widget' *ngIf="devices.hasSwitches()">Working...</my-widget-switch>
 <my-widget-door-control class='widget' *ngIf="devices.hasDoorControl()">Working...</my-widget-door-control>
 
-<my-widget-climate class='widget' *ngIf="devices.hasFloors()">Working...</my-widget-climate>
+<div class='placeholder row'></div>
+
 <div class='placeholder'></div>
+<my-widget-climate class='widget' *ngIf="devices.hasFloors()">Working...</my-widget-climate>

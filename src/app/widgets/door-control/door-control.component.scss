@@ -4,17 +4,17 @@ $doorFrameWidth: 3px;
 
 $holeWidth: ($totalWidth * .45);
 $holeHeight: ($totalHeight * (1/3));
-$holeTop: $buildingHeight + $buildingMarginHeight - $holeHeight;
+$holeTop: $buildingHeight + $buildingMarginHeight - $holeHeight - 1;
 $holeLeft: (($totalWidth - $wallWidth) / 2) + ($wallWidth - $holeWidth) / 2;
 
 $doorHeight: $holeHeight - $doorFrameWidth;
 $doorWidth: $holeWidth - ($doorFrameWidth * 2);
-$doorTop: $buildingHeight + $buildingMarginHeight - $doorHeight;
+$doorTop: $buildingHeight + $buildingMarginHeight - $doorHeight - 1;
 $doorLeft: (($totalWidth - $wallWidth) / 2) + ($wallWidth - $doorWidth) / 2;
 
 .widget-door-control {
-	height: 100%;
 	display: flex;
+	flex: 1 1 auto;
 	justify-content: center;
 	align-items: center;
 
