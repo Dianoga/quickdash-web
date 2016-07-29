@@ -3,10 +3,9 @@
 $floorHeight: 50px;
 
 .widget-climate {
-	height: 100%;
-	max-width: 40vw;
-
+	flex: 1 1 auto;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
@@ -16,45 +15,54 @@ $floorHeight: 50px;
 	}
 }
 
-.outdoorWeather {
+.outdoorClimate {
 	flex: 1 1 auto;
 	display: flex;
-	flex-wrap: wrap;
 	padding: 10px;
 	color: white;
 
-	&>div {
-		flex: 1 1 auto;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 50%;
-		font-size: 2vw;
+	.weather-icon {
+		text-align: center;
+		font-size: 10vw;
+		margin-right: 3vw;
 	}
 
 	.conditions {
-		text-align: center;
-		font-size: 6vw;
-		margin-bottom: 10px
+		display: flex;
+		flex-direction: column;
+		font-size: 3vw;
 	}
 
 	.temperature {
 		text-align: center;
 		font-size: 4vw;
-		margin-bottom: 10px
 	}
 
 	.humidity span,
 	.wind span,
 	.alert span {
-		padding-right: 5px;
+		width: 30px;
+		display: inline-block;
 	}
 
 	.humidity:after {
-			content: '%';
-			vertical-align: super;
-			font-size: 50%;
-		}
+		content: '%';
+		vertical-align: super;
+		font-size: 50%;
+	}
+
+	.wind:after {
+		content: 'mph';
+		vertical-align: super;
+		font-size: 50%;
+	}
+}
+
+.indoorClimate {
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .floor {
