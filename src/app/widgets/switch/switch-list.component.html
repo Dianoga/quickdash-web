@@ -1,6 +1,6 @@
 <div class='widget-list list-switch'>
 	<a routerLink="/dashboard" class='to-dashboard'>&larr;</a>
-	<div *ngFor="let device of getDevices()" class='item switch' [ngClass]="device.switch">
+	<div *ngFor="let device of getDevices()" class='item switch' [ngClass]="device.switch" (click)="toggleSwitch(device)">
 		{{device.name}}
 	</div>
 </div>

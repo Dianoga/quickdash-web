@@ -16,4 +16,14 @@ export class SwitchListComponent {
 	getDevices(): Device[] {
 		return _.sortBy(this.devices.getSwitches(), 'name');
 	}
+
+	toggleSwitch(device) {
+		if (device.switch === 'on') {
+			this.devices.sendCommand(device, 'off');
+		} else if (device.switch === 'off') {
+			this.devices.sendCommand(device, 'on');
+		} else {
+			console.log('busy');
+		}
+	}
 }
