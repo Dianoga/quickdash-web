@@ -48,6 +48,10 @@ export class DeviceService {
 			});
 	}
 
+	hasDevices(): Boolean {
+		return this.devices.length > 0;
+	}
+
 	hasContactSensors(): Boolean {
 		return !!_.find(this.devices, 'contact');
 	}
