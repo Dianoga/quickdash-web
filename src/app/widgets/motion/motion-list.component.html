@@ -1,0 +1,6 @@
+<div class='widget-list list-motion'>
+	<a routerLink="/dashboard" class='to-dashboard'>&larr;</a>
+	<div *ngFor="let device of getDevices()" class='item motion' [ngClass]="device.motion">
+		{{device.name}}
+	</div>
+</div>

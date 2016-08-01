@@ -3,7 +3,6 @@
 :host {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 }
 
 .widget {
@@ -21,17 +20,21 @@ my-widget-contact {
 	width: 37vw;
 }
 
+my-widget-climate {
+	width: 37vw;
+	height: 60vh !important;
+}
+
 my-widget-door-control {
 	flex: 1 1 auto;
 }
 
-my-widget-switch {
+my-widget-motion {
 	width: 37vw;
 }
 
-my-widget-climate {
+my-widget-switch {
 	width: 37vw;
-	height: 60vh !important;
 }
 
 .placeholder.row {

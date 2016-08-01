@@ -68,6 +68,14 @@ export class DeviceService {
 		return _.filter(this.devices, 'switch');
 	}
 
+	hasMotionSensors(): Boolean {
+		return !!_.find(this.devices, 'motion');
+	}
+
+	getMotionSensors(): Device[] {
+		return _.filter(this.devices, 'motion');
+	}
+
 	hasFloors(): Boolean {
 		return !!_.find(this.devices, { type: 'floor' });
 	}

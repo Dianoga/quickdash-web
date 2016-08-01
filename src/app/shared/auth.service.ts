@@ -20,7 +20,6 @@ export class AuthService {
 	constructor(private firebase: FirebaseService) {
 		firebase.auth.onAuthStateChanged(user => {
 			this.started = true;
-			console.log('User', user);
 
 			if (!!user) {
 				this.user.loggedIn = true;

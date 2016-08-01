@@ -1,0 +1,19 @@
+<div class='widget-motion' [ngClass]="isEverythingAwesome() ? 'awesome' : 'awful'" (click)="navigate()">
+
+	<div class='motion-mount'>
+		<div class='motion'>
+			<div class='sensor'></div>
+		</div>
+	</div>
+
+	<div class='content' [ngSwitch]="isEverythingAwesome()">
+		<div class='status' *ngSwitchCase="true">Nothing Active</div>
+		<div *ngSwitchDefault>
+			<div class='status'>Active</div>
+			<div class='details' [ngSwitch]="awfulSensors().length">
+				<div *ngSwitchCase="1">{{awfulSensors()[0].name}}</div>
+				<div *ngSwitchDefault>{{awfulSensors().length}} sensors active</div>
+			</div>
+		</div>
+	</div>
+</div>
