@@ -1,5 +1,9 @@
 <div class='widget-climate'>
 	<div class='outdoorClimate' *ngIf="outdoorWeather">
+		<div class='alert' *ngIf='outdoorWeather.alert'>
+			<span class='icon-alert'></span> {{outdoorWeather.alert}}
+		</div>
+
 		<div class='weather-icon'>
 			<span class="icon-{{iconMap[outdoorWeather.weatherIcon]}}"></span>
 		</div>
@@ -14,9 +18,6 @@
 			<div class='wind'>
 				<span class='icon-w-windy'></span> {{outdoorWeather.wind}}
 			</div>
-		</div>
-		<div class='alert' *ngIf='outdoorWeather.alert'>
-			<span class='icon-alert'></span> {{outdoorWeather.alert}}
 		</div>
 	</div>
 

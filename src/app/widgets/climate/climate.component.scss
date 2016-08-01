@@ -20,6 +20,9 @@ $floorHeight: 50px;
 	display: flex;
 	padding: 10px;
 	color: white;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 
 	.weather-icon {
 		text-align: center;
@@ -43,6 +46,12 @@ $floorHeight: 50px;
 	.alert span {
 		width: 30px;
 		display: inline-block;
+		text-align: center;
+	}
+
+	.alert {
+		flex: 0 0 100%;
+		text-align: center;
 	}
 
 	.humidity:after {
